@@ -6,8 +6,8 @@ This module demonstrates simple LOOPS of the form:
 and also USING OBJECTS.
 
 Authors: David Mutchler, Dave Fisher, Vibha Alangar, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Gerardo Santana.
+"""  # DOne: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -15,9 +15,19 @@ import rosegraphics as rg
 def main():
     """ Calls the other functions to demonstrate and/or test them. """
     # Test your functions by putting calls to them here:
-
+    print_sequence1()
+    draw_circles1()
+    print_sequence2()
+    draw_circles2()
 
 def print_sequence1():
+
+    total=0
+    for k in range(21):
+        print(total)
+        total = total + 10
+
+
     """
     Prints:
        0
@@ -29,7 +39,7 @@ def print_sequence1():
        200
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this function, per its doc-string above.
+    # Done: 2. Implement this function, per its doc-string above.
     # Put a statement in  main  to test this function.
     # REQUIREMENT: You must use a   RANGE  statement to solve this problem.
     # ------------------------------------------------------------------
@@ -37,7 +47,6 @@ def print_sequence1():
     print('--------------------------------------------------')
     print('Running print_sequence1:')
     print('--------------------------------------------------')
-
 
 def draw_circles1():
     """
@@ -47,8 +56,20 @@ def draw_circles1():
          -- They have radii:  0  10  20  30  40 ... 200, respectively.
     -- Waits for the user to press the mouse, then closes the window.
     """
+    window = rg.RoseWindow(400,400)
+    center=(rg.Point(200,200))
+    raduis=0
+
+    for k in range(21):
+        circle = rg.Circle(center,raduis)
+        circle.attach_to(window)
+        window.render()
+        raduis=raduis+10
+    window.close_on_mouse_click()
+
+
     # ------------------------------------------------------------------
-    # TODO: 3. Implement this function, per its doc-string above.
+    # Done: 3. Implement this function, per its doc-string above.
     # Put a statement in  main  to test this function.
     # REQUIREMENT: You must use a   RANGE  statement to solve this problem.
     # HINT: You might find a prior module useful when 'writing' this code.
@@ -60,6 +81,10 @@ def draw_circles1():
 
 
 def print_sequence2():
+    total = 50
+    for k in range(18):
+        print(total)
+        total = total + 20
     """
     Prints:
       50
@@ -71,7 +96,7 @@ def print_sequence2():
       390.
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement this function, per its doc-string above.
+    # Done: 4. Implement this function, per its doc-string above.
     # Put a statement in  main  to test this function.
     # REQUIREMENT: You must use a   RANGE  statement to solve this problem.
     # ------------------------------------------------------------------
@@ -91,11 +116,23 @@ def draw_circles2():
                (50, 100)   (70, 100)   (90, 100)  (110, 100) ... (390, 100)
     -- Waits for the user to press the mouse, then closes the window.
     """
-    # ------------------------------------------------------------------
+    window = rg.RoseWindow(400,400)
+    x = 50
+    y = 30
+    for k in range(18):
+        center = (rg.Point(x,y))
+        circle = rg.Circle(center,10)
+        circle.attach_to(window)
+        circle.fill_color('blue')
+        window.render()
+        x = x + 50
+window.close_on_mouse_click()
+# ------------------------------------------------------------------
     # TODO: 5. Implement this function, per its doc-string above.
     # Put a statement in  main  to test this function.
     # REQUIREMENT: You must use a   RANGE  statement to solve this problem.
-    # ------------------------------------------------------------------
+    # ------------------------------------------------------------------#
+
     print()
     print('--------------------------------------------------')
     print('Running draw_circles2:  See graphics window')
