@@ -4,8 +4,8 @@ in its simplest classic forms:
    SUMMING:       total = total + number
 
 Authors: David Mutchler, Dave Fisher, Vibha Alangar, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Gerardo Santana.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -29,8 +29,9 @@ def run_test_sum_powers():
     print('Testing the   sum_powers   function:')
     print('--------------------------------------------------')
 
-
 def sum_powers(n, p):
+
+        
     """
     What comes in:  A non-negative integer n
                     and a number p.
